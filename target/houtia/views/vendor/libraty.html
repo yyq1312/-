@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>图书馆信息管理</title>
+		<!-- 图标-->
+		<link rel="stylesheet" href="../vendor/bootstrap-icons/font/bootstrap-icons.css">
+		<!-- 图标-->
+		<link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+		<link href="../css/weiz.css" />
+
+		<!-- 样式 -->
+		<link href="../css/nb-admin-2.min.css" rel="stylesheet">
+
+		<!-- 样式 -->
+		<link href="../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+	</head>
+
+	<body id="page-top">
+
+		<!-- Page Wrapper -->
+		<div id="wrapper">
+
+			<!-- Sidebar -->
+			<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+			
+				<!-- 侧边栏--->
+				<a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+					<div class="sidebar-brand-icon rotate-n-15">
+						<i class="fas fa-laugh-wink"></i>
+					</div>
+					<div class="sidebar-brand-text mx-3">图书馆管理系统 <sup></sup></div>
+				</a>
+			
+				<!-- 除法器-->
+				<hr class="sidebar-divider my-0">
+			
+				<!-- Nav Item - Dashboard -->
+				<li class="nav-item active">
+					<a class="nav-link" href="../start/index.html">
+						<i class="bi bi-house-door"></i>
+						<span>回到首页</span></a>
+				</li>
+			
+			
+			
+				<!-- 除法器-->
+				<hr class="sidebar-divider">
+			
+				<div class="sidebar-heading">
+					界面
+				</div>
+			
+				<!-- 标题-->
+				<li class="nav-item">
+					<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+						aria-expanded="true" aria-controls="collapseTwo">
+						<i class="fas fa-fw fa-wrench"></i>
+						<span>用户管理</span>
+					</a>
+					<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+						<div class="bg-white py-2 collapse-inner rounded">
+							<h6 class="collapse-header">高级选项</h6>
+							<a class="collapse-item" href="../user/user set.html">用户管理</a>
+							<a class="collapse-item" href="../user/Role management.html">角色管理</a>
+						</div>
+					</div>
+				</li>
+			
+				<!-- 导航项-实用程序折叠菜单-->
+			
+			
+				<li class="nav-item">
+					<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+						aria-expanded="true" aria-controls="collapseUtilities">
+						<i class="fas fa-fw fa-wrench"></i>
+						<span>学校信息管理</span>
+					</a>
+					<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+						data-parent="#accordionSidebar">
+						<div class="bg-white py-2 collapse-inner rounded">
+							<h6 class="collapse-header">高级选项</h6>
+							<a class="collapse-item" href="../home/School information.html">校区信息管理</a>
+							<a class="collapse-item" href="../home/libraty.html">图书馆信息管理</a>
+							<a class="collapse-item" href="../home/Reading room management.html">阅览室信息管理</a>
+							
+						</div>
+					</div>
+				</li>
+			
+				<li class="nav-item">
+					<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsemonitor"
+						aria-expanded="true" aria-controls="collapsemonitor">
+						<i class="fas fa-fw fa-wrench"></i>
+						<span>使用状态监控</span>
+					</a>
+					<div id="collapsemonitor" class="collapse" aria-labelledby="headingUtilities"
+						data-parent="#accordionSidebar">
+						<div class="bg-white py-2 collapse-inner rounded">
+							<h6 class="collapse-header">高级选项</h6>
+							<a class="collapse-item" href="../monitoring/Seat monitoring.html">阅览室监控</a>
+							<a class="collapse-item" href="../monitoring/Equipment status.html">设备监控</a>
+			
+						</div>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRecording"
+						aria-expanded="true" aria-controls="collapseRecording">
+						<i class="fas fa-fw fa-wrench"></i>
+						<span>记录管理</span>
+					</a>
+					<div id="collapseRecording" class="collapse" aria-labelledby="headingUtilities"
+						data-parent="#accordionSidebar">
+						<div class="bg-white py-2 collapse-inner rounded">
+							<h6 class="collapse-header">高级选项</h6>
+							<a class="collapse-item" href="../record/进出记录管理.html">进出记录管理</a>
+							<a class="collapse-item" href="../record/预约记录管理.html">预约记录管理</a>
+							<a class="collapse-item" href="../record/违规记录管理.html">违规记录管理</a>
+							<a class="collapse-item" href="../record/黑名单记录管理.html">黑名单记录管理</a>
+			
+						</div>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsestatistics"
+						aria-expanded="true" aria-controls="collapsestatistics">
+						<i class="fas fa-fw fa-wrench"></i>
+						<span>统计查询</span>
+					</a>
+					<div id="collapsestatistics" class="collapse" aria-labelledby="headingUtilities"
+						data-parent="#accordionSidebar">
+						<div class="bg-white py-2 collapse-inner rounded">
+							<h6 class="collapse-header">高级选项</h6>
+							<a class="collapse-item" href="../Thestudy/inout.html">进出记录人数统计</a>
+							<a class="collapse-item" href="../Thestudy/seat.html">座位使用情况统计</a>
+							<a class="collapse-item" href="../Thestudy/readingroominout.html">阅览室进出人次统计</a>
+							<a class="collapse-item" href="../Thestudy/readingroom.html">阅览室信息统计</a>
+							<a class="collapse-item" href="../Thestudy/rankinglist.html">记录排行榜</a>
+			
+						</div>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsesSenior"
+						aria-expanded="true" aria-controls="collapsesSenior">
+						<i class="fas fa-fw fa-wrench"></i>
+						<span>管理功能设置</span>
+					</a>
+					<div id="collapsesSenior" class="collapse" aria-labelledby="headingUtilities"
+						data-parent="#accordionSidebar">
+						<div class="bg-white py-2 collapse-inner rounded">
+							<h6 class="collapse-header">高级选项</h6>
+							<a class="collapse-item" href="../blacklist/blacklist set.html">黑名单设置</a>
+							<a class="collapse-item" href="../blacklist/Touch screen terminal settings.html">触摸终端设置</a>
+			
+			
+						</div>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#TheStudyBetween"
+						aria-expanded="true" aria-controls="collapsestatistics">
+						<i class="fas fa-fw fa-wrench"></i>
+						<span>研习间管理</span>
+					</a>
+					<div id="TheStudyBetween" class="collapse" aria-labelledby="TheStudyBetween"
+						data-parent="#TheStudyBetween">
+						<div class="bg-white py-2 collapse-inner rounded">
+							<h6 class="collapse-header">高级选项</h6>
+							<a class="collapse-item" href="../Workshop/Application management.html">研习间管理</a>
+							<a class="collapse-item" href="../Workshop/Workshop management.html">申请管理</a>
+						</div>
+					</div>
+				</li>
+				
+				<hr class="sidebar-divider">
+				
+				
+			
+			
+				<!-- 侧边栏切换器（侧边栏）-->
+			
+				<div class="text-center d-none d-md-inline">
+					<button class="rounded-circle border-0" id="sidebarToggle"></button>
+				</div>
+			
+				<!-- 边栏消息-->
+			
+			
+			
+			</ul>
+			<!-- 侧边栏结束-->
+
+			<!-- Content Wrapper -->
+			<div id="content-wrapper" class="d-flex flex-column">
+
+				<!-- Main Content -->
+				<div id="content">
+
+					<!-- Topbar -->
+					<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+						<!-- Sidebar Toggle (Topbar) -->
+						<form class="form-inline">
+							<button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+								<i class="fa fa-bars"></i>
+							</button>
+						</form>
+
+						<!-- 搜索 Search -->
+						<form
+							class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+							<div class="input-group">
+								<input type="text" class="form-control bg-light border-0 small"
+									placeholder="搜索..." aria-label="Search" aria-describedby="basic-addon2">
+								<div class="input-group-append">
+									<button class="btn btn-primary" type="button">
+										<i class="fas fa-search fa-sm"></i>
+									</button>
+								</div>
+							</div>
+						</form>
+
+						<!-- Topbar Navbar -->
+						<ul class="navbar-nav ml-auto">
+
+							<!-- Nav Item - Search Dropdown (Visible Only XS) -->
+							<li class="nav-item dropdown no-arrow d-sm-none">
+								<a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+									data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<i class="fas fa-search fa-fw"></i>
+								</a>
+								<!-- Dropdown - Messages -->
+								<div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+									aria-labelledby="searchDropdown">
+									<form class="form-inline mr-auto w-100 navbar-search">
+										<div class="input-group">
+											<input type="text" class="form-control bg-light border-0 small"
+												placeholder="搜索" aria-label="Search"
+												aria-describedby="basic-addon2">
+											<div class="input-group-append">
+												<button class="btn btn-primary" type="button">
+													<i class="fas fa-search fa-sm"></i>
+												</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</li>
+
+							<!-- Nav Item - Alerts -->
+
+
+							<!-- Nav Item - Messages -->
+
+
+							<div class="topbar-divider d-none d-sm-block"></div>
+
+							<!-- Nav Item - User Information -->
+							<li class="nav-item dropdown no-arrow">
+								<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+									data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<span class="mr-2 d-none d-lg-inline text-gray-600 small">汪汪队管理员</span>
+									<img style="height: 2rem;width: 2rem" class="../img-profile rounded-circle"
+										src="../img/undraw_profile.svg">
+								</a>
+								<!-- Dropdown - User Information -->
+								<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+									aria-labelledby="userDropdown">
+
+										<a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModa2">
+											<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+											设置密码
+										</a>
+
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+										<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+										登出
+									</a>
+								</div>
+							</li>
+
+						</ul>
+
+					</nav>
+					
+					
+					<!-- End of Topbar -->
+
+					<!-- Begin Page Content -->
+					<div class="container-fluid">
+
+
+
+						<!-- 表单顶部 -->
+
+						<div class="card shadow mb-4">
+							<div class="card-header py-3">
+								<h6 class="m-0 font-weight-bold text-primary">图书馆列表<a style="float: right;" href="#" 
+										class="btn btn-sm btn-primary btn-icon-split" data-toggle="modal" data-target="#Update">
+										<span class="icon text-white-50">
+											<i class="bi bi-plus-circle-fill"></i>
+										</span>
+										<span class="text">新增</span>
+									</a></h6>
+							</div>
+
+
+
+							<div class="card-body">
+								<div class="table-responsive">
+									<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+										<thead>
+											
+											<tr>
+												<th>图书馆编号</th>
+												<th>校图书馆名称</th>
+												<th>所属校区</th>
+												<th>编辑</th>
+												<th>删除</th>
+
+											</tr>
+										</thead>
+										<tfoot>
+											<tr>
+												<th>图书馆编号</th>
+												<th>校图书馆名称</th>
+												<th>所属校区</th>
+												<th>编辑</th>
+												<th>删除</th>
+											</tr>
+										</tfoot>
+										<tbody>
+											<tr>
+													<td>0002</td>
+													<td>相思湖校区图书馆</td>
+													<td>相思湖校区</td>
+													<td><a href="#" 
+											class="btn btn-sm btn-success	 btn-icon-split" data-toggle="modal" data-target="#Edit">
+															<span class="icon text-white-50">
+																<i class="bi bi-gear"></i>
+															</span>
+															<span class="text">编辑</span>
+														</a>
+													</td>
+													<td><a href="#" class="btn btn-sm btn-danger btn-icon-split">
+															<span class="icon text-white-50">
+																<i class="fas fa-trash"></i>
+															</span>
+															<span class="text">删除</span>
+														</a>
+													</td>
+												</tr>
+											<tr>
+													<td>0001</td>
+													<td>相思湖校区图书馆</td>
+													<td>相思湖校区</td>
+													<td><a href="#" 
+											class="btn btn-sm btn-success	 btn-icon-split" data-toggle="modal" data-target="#Edit">
+															<span class="icon text-white-50">
+																<i class="bi bi-gear"></i>
+															</span>
+															<span class="text">编辑</span>
+														</a>
+													</td>
+													<td><a href="#" class="btn btn-sm btn-danger btn-icon-split">
+															<span class="icon text-white-50">
+																<i class="fas fa-trash"></i>
+															</span>
+															<span class="text">删除</span>
+														</a>
+													</td>
+												</tr>
+											<tr>
+												<td>0001</td>
+												<td>相思湖校区图书馆</td>
+												<td>相思湖校区</td>
+												<td><a href="#" 
+										class="btn btn-sm btn-success	 btn-icon-split" data-toggle="modal" data-target="#Edit">
+														<span class="icon text-white-50">
+															<i class="bi bi-gear"></i>
+														</span>
+														<span class="text">编辑</span>
+													</a>
+												</td>
+												<td><a href="#" class="btn btn-sm btn-danger btn-icon-split">
+														<span class="icon text-white-50">
+															<i class="fas fa-trash"></i>
+														</span>
+														<span class="text">删除</span>
+													</a>
+												</td>
+											</tr>
+											<tr>
+													<td>0001</td>
+													<td>相思湖校区图书馆</td>
+													<td>相思湖校区</td>
+													<td><a href="#" 
+											class="btn btn-sm btn-success	 btn-icon-split" data-toggle="modal" data-target="#Edit">
+															<span class="icon text-white-50">
+																<i class="bi bi-gear"></i>
+															</span>
+															<span class="text">编辑</span>
+														</a>
+													</td>
+													<td><a href="#" class="btn btn-sm btn-danger btn-icon-split">
+															<span class="icon text-white-50">
+																<i class="fas fa-trash"></i>
+															</span>
+															<span class="text">删除</span>
+														</a>
+													</td>
+												</tr>
+												<tr>
+														<td>0001</td>
+														<td>相思湖校区图书馆</td>
+														<td>相思湖校区</td>
+														<td><a href="#" 
+												class="btn btn-sm btn-success	 btn-icon-split" data-toggle="modal" data-target="#Edit">
+																<span class="icon text-white-50">
+																	<i class="bi bi-gear"></i>
+																</span>
+																<span class="text">编辑</span>
+															</a>
+														</td>
+														<td><a href="#" class="btn btn-sm btn-danger btn-icon-split">
+																<span class="icon text-white-50">
+																	<i class="fas fa-trash"></i>
+																</span>
+																<span class="text">删除</span>
+															</a>
+														</td>
+													</tr>
+													<tr>
+															<td>0001</td>
+															<td>相思湖校区图书馆</td>
+															<td>相思湖校区</td>
+															<td><a href="#" 
+													class="btn btn-sm btn-success	 btn-icon-split" data-toggle="modal" data-target="#Edit">
+																	<span class="icon text-white-50">
+																		<i class="bi bi-gear"></i>
+																	</span>
+																	<span class="text">编辑</span>
+																</a>
+															</td>
+															<td><a href="#" class="btn btn-sm btn-danger btn-icon-split">
+																	<span class="icon text-white-50">
+																		<i class="fas fa-trash"></i>
+																	</span>
+																	<span class="text">删除</span>
+																</a>
+															</td>
+														</tr>
+														<tr>
+																<td>0001</td>
+																<td>相思湖校区图书馆</td>
+																<td>相思湖校区</td>
+																<td><a href="#" 
+														class="btn btn-sm btn-success	 btn-icon-split" data-toggle="modal" data-target="#Edit">
+																		<span class="icon text-white-50">
+																			<i class="bi bi-gear"></i>
+																		</span>
+																		<span class="text">编辑</span>
+																	</a>
+																</td>
+																<td><a href="#" class="btn btn-sm btn-danger btn-icon-split">
+																		<span class="icon text-white-50">
+																			<i class="fas fa-trash"></i>
+																		</span>
+																		<span class="text">删除</span>
+																	</a>
+																</td>
+															</tr>
+															<tr>
+																	<td>0001</td>
+																	<td>相思湖校区图书馆</td>
+																	<td>相思湖校区</td>
+																	<td><a href="#" 
+															class="btn btn-sm btn-success	 btn-icon-split" data-toggle="modal" data-target="#Edit">
+																			<span class="icon text-white-50">
+																				<i class="bi bi-gear"></i>
+																			</span>
+																			<span class="text">编辑</span>
+																		</a>
+																	</td>
+																	<td><a href="#" class="btn btn-sm btn-danger btn-icon-split">
+																			<span class="icon text-white-50">
+																				<i class="fas fa-trash"></i>
+																			</span>
+																			<span class="text">删除</span>
+																		</a>
+																	</td>
+																</tr>
+																<tr>
+																		<td>0001</td>
+																		<td>相思湖校区图书馆</td>
+																		<td>相思湖校区</td>
+																		<td><a href="#" 
+																class="btn btn-sm btn-success	 btn-icon-split" data-toggle="modal" data-target="#Edit">
+																				<span class="icon text-white-50">
+																					<i class="bi bi-gear"></i>
+																				</span>
+																				<span class="text">编辑</span>
+																			</a>
+																		</td>
+																		<td><a href="#" class="btn btn-sm btn-danger btn-icon-split">
+																				<span class="icon text-white-50">
+																					<i class="fas fa-trash"></i>
+																				</span>
+																				<span class="text">删除</span>
+																			</a>
+																		</td>
+																	</tr>
+												
+													
+														
+															
+																
+																	
+												
+												
+										
+												
+									
+
+
+
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+
+	
+
+
+						
+					</div>
+					<!-- /.container-fluid -->
+
+				</div>
+				<!-- End of Main Content -->
+
+				<!-- Footer -->
+				<footer class="sticky-footer bg-white">
+					<div class="container my-auto">
+						<div class="copyright text-center my-auto">
+							<span>广西楚维科技公司</span>
+						</div>
+					</div>
+				</footer>
+				<!-- End of Footer -->
+
+			</div>
+			<!-- End of Content Wrapper -->
+
+		</div>
+		<!-- End of Page Wrapper -->
+
+		<!-- Scroll to Top Button-->
+		<a class="scroll-to-top rounded" href="#page-top">
+			<i class="fas fa-angle-up"></i>
+		</a>
+
+		<!-- 退出-->
+		<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">汪汪管理员</h5>
+						<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+					</div>
+					<div class="modal-body">您确定要登出吗？</div>
+					<div class="modal-footer">
+						<button class="btn btn-secondary" type="button" data-dismiss="modal">取消</button>
+						<a class="btn btn-primary" href="../login.html">登出</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--新增-->
+		<div class="modal fade" id="Update" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabe">新增图书馆</h5>
+						<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+					</div>
+					<div class="modal-body"><table>
+					<tbody><tr>
+						<td></td>
+						<td><select class="form-control">
+							  <option selected="">请选择你的校区</option>
+							  <option value="1">思源湖校区</option>
+							  <option value="2">思源湖校区</option>
+							  <option value="3">思源湖校区</option>
+							</select></td>
+								
+					</tr>
+					<tr>
+						<td>图书馆编号</td>
+						<td><input type="text" style="width:300px;" id="schoolId" name="schoolId" class="form-control bg-light border-1 small"></td>
+					</tr>
+					<tr>
+						<td>图书馆名称</td>
+						<td><input type="text" style="width:300px;" id="schoolId1" name="schoolId" class="form-control bg-light border-1 small"></td>
+					</tr>
+					<tr>
+						<td>区域划分</td>
+						<td><div class="input-group" style="width: 18.375rem;">
+		
+		<textarea class="form-control" aria-label="With textarea" placeholder="区域之间用分号(;)隔开，没有划分区域请留空" ></textarea><!-- "="" -->
+			</div></td><td>
+					</td></tr>
+				</tbody></table>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-secondary" type="button" data-dismiss="modal">取消</button>
+						<a class="btn btn-primary" href="">保存</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 编辑-->
+		<div class="modal fade" id="Edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel1">编辑图书馆</h5>
+						<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+					</div>
+					<div class="modal-body"><table>
+					<tbody><tr>
+						<td></td>
+						<td><select class="form-control">
+							  <option selected="">请选择你的校区</option>
+							  <option value="1">思源湖校区</option>
+							  <option value="2">思源湖校区</option>
+							  <option value="3">思源湖校区</option>
+							</select></td>
+								
+					</tr>
+					<tr>
+						<td>图书馆编号</td>
+						<td><input type="text" style="width:300px;" id="schoolId0" name="schoolId" class="form-control bg-light border-1 small"></td>
+					</tr>
+					<tr>
+						<td>图书馆名称</td>
+						<td><input type="text" style="width:300px;" id="schoolId2" name="schoolId" class="form-control bg-light border-1 small"></td>
+					</tr>
+					<tr>
+						<td>区域划分</td>
+						<td><div class="input-group" style="width: 18.375rem;">
+		
+		<textarea class="form-control" aria-label="With textarea" placeholder="区域之间用分号(;)隔开，没有划分区域请留空" ></textarea><!-- "="" -->
+			</div></td><td>
+					</td></tr>
+				</tbody></table></div>
+					<div class="modal-footer">
+						<button class="btn btn-secondary" type="button" data-dismiss="modal">取消</button>
+						<a class="btn btn-primary" href="">保存</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Bootstrap 的 JavaScript-->
+		<script src="../vendor/jquery/jquery.min.js"></script>
+		<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+		<!-- jq JavaScript-->
+		<script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+		<script src="../js/nb-admin-2.min.js"></script>
+
+		<!-- 页面插件 -->
+		<script src="../vendor/datatables/jquery.dataTables.min.js"></script>
+		<script src="../vendor/da	tatables/dataTables.bootstrap4.min.js"></script>
+
+、
+		<script src="../js/demo/datatables-demo.js"></script>
+
+	</body>
+
+</html>

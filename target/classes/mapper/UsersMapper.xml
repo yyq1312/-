@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.item.dao.UsersMapper">
+
+    <select id="GetInfo" resultType="Users">
+        select * from sys_user
+    </select>
+    <delete id="DeleteUsers">
+        delete from sys_user where user_name="${user_name}"
+    </delete>
+    <insert id="InsertUser">
+        INSERT INTO sys_user VALUES (
+        0,
+        "${user_name}",
+        "${user_emil}",
+        "${password}",
+        NOW(),
+        null,
+        null,
+        0)
+    </insert>
+    <update id="UpdateUser">
+        UPDATE sys_user SET user_name="${user_name}" , user_emil="${user_emil}" WHERE id=#{id}
+    </update>
+
+    <select id="Gtinfocommodity" resultType="Commodity">
+      SELECT * FROM sys_commodity
+    </select>
+    <delete id="Deletecommodity">
+        delete from sys_commodity where shopname="${shopname}"
+    </delete>
+    <insert id="Insertcommodity">
+        INSERT INTO sys_commodity VALUES (
+        0,
+        "assets/images/product/medium-size/rou13.jpg",
+        "${shopname}",
+        "${price}",
+        "薄荷零食",
+        "${number}"
+        )
+    </insert>
+    <update id="Updatecommodity">
+        UPDATE sys_commodity SET price="${price}" , number="${number}" WHERE shopname="${shopname}"
+    </update>
+
+
+    <select id="Gtinforders" resultType="orders">
+      SELECT * FROM sys_orders
+    </select>
+
+    <insert id="InsertOrdes">
+        INSERT INTO sys_orders VALUES(
+        0,
+         "${bianhao}",
+        "${user_name}",
+        "${phone}",
+        "${shopname}",
+      "${number}",
+      "${address}",
+      "${total}",
+      "${status}",
+       NOW(),
+       "${remarks}",
+       "${name}")
+    </insert>
+    <delete id="DeleteOrders">
+        delete from sys_orders where bianhao="${bianhao}"
+    </delete>
+    <update id="Updateorders">
+        UPDATE sys_orders SET status ="${status}", phone="${phone}",address="${address}" ,name="${name}"  WHERE  shopname = "${shopname}"
+    </update>
+</mapper>
